@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg glass-nav shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="/">
+            <i class="fas fa-briefcase"></i> JobElite
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/jobs">Browse Jobs</a></li>
+
+                <% if (user && user.role === 'employer') { %>
+                    <li class="nav-item"><a class="nav-link" href="/post-job">Post a Job</a></li>
+                <% } %>
+
+                <% if (user) { %>
+                    <li class="nav-item">
+                        <a class="nav-link btn glass-btn text-dark px-3" href="/logout">
+                            <i class="fas fa-user-plus"></i> Logout
+                        </a>
+                    </li>
+                <% } else { %>
+                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/signup">Sign Up</a></li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</nav>

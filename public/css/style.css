@@ -1,0 +1,145 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+}
+
+/* Glassmorphism Navbar */
+.glass-nav {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.glass-nav .nav-link {
+    color: #222;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.glass-nav .nav-link:hover {
+    color: #007bff;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://source.unsplash.com/1600x900/?business,work') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero .highlight {
+    color: #ff8c00;
+}
+
+.glass-btn {
+    background: rgba(173, 251, 255, 0.2);
+    border: 1px solid white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    color: white;
+}
+
+.glass-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+.hero {
+    background: url('https://i.ibb.co/7dSMg38k/Background.png') no-repeat center center;
+    background-size: cover;
+    color: white; /* Ensures text is readable */
+    padding: 100px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+
+/* Features */
+.features {
+    padding: 50px 20px;
+    background: white;
+}
+
+.feature-icon {
+    font-size: 50px;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+.footer {
+    background: #222;
+}
+
+.social-link {
+    color: white;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.social-link:hover {
+    color: #ff8c00;
+}
+
+/* jobs */
+.job-card {
+    background: #fff;
+    border-radius: 10px;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    min-height: 250px;
+}
+
+/* Hover Effect: Expand Card */
+.job-card:hover {
+    transform: scale(1.05); /* Increases size */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Initially Hide Description */
+.job-description {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Show Description on Hover */
+.job-card:hover .job-description {
+    max-height: 200px;
+    opacity: 1;
+    padding-top: 10px;
+}
+
+.job-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.company-name, .location, .salary, .experience, .posted-date {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.btn-block {
+    width: 100%;
+}
