@@ -3,9 +3,9 @@ const path = require("path");
 const express = require("express");
 const session = require("express-session");
 const conn = require("./db/dbconn");
-
 const { GoogleGenerativeAI } = require('@google/generative-ai');
-
+const genAI = new GoogleGenerativeAI(process.env.GEMINIAI);
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-001" });
 const app = express();
 const ejsMate = require("ejs-mate");
 const port = 3000;
@@ -221,11 +221,16 @@ app.get("/logout", (req, res) => {
 // api route 
 app.post('/generate', async (req, res) => {
     const { prompt } = req.body;
+    console.log(prompt);
+
 
     try {
         const result = await model.generateContent(prompt);
+        console.log("result", result);
         const response = await result.response;
+        console.log("response", response);
         const text = await response.text();
+        console.log("text", text);
         res.json({ text });
     } catch (error) {
         res.status(500).json({ error: error.message });
